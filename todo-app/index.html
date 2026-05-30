@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办事项应用 - Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <h1>📝 待办事项</h1>
+            <p class="subtitle">管理你的日常任务</p>
+        </div>
+
+        <!-- 输入区域 -->
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="task-input" 
+                    placeholder="添加新任务..."
+                    autocomplete="off"
+                >
+                <select id="prioritySelect" class="priority-select">
+                    <option value="low">低</option>
+                    <option value="medium" selected>中</option>
+                    <option value="high">高</option>
+                </select>
+                <button id="addBtn" class="add-btn">添加</button>
+            </div>
+        </div>
+
+        <!-- 统计信息 -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">总任务：</span>
+                <span class="stat-value" id="totalCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">已完成：</span>
+                <span class="stat-value completed" id="completedCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">待完成：</span>
+                <span class="stat-value pending" id="pendingCount">0</span>
+            </div>
+        </div>
+
+        <!-- 筛选按钮 -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="active">进行中</button>
+            <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+
+        <!-- 任务列表 -->
+        <div class="tasks-container">
+            <div class="empty-state" id="emptyState">
+                <p>📭 暂无任务</p>
+                <p class="empty-text">添加一个新任务开始吧！</p>
+            </div>
+            <ul class="task-list" id="taskList"></ul>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div class="action-buttons">
+            <button id="clearCompletedBtn" class="clear-btn">清除已完成</button>
+            <button id="clearAllBtn" class="clear-all-btn">清空所有</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
